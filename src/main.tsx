@@ -4,14 +4,14 @@ import App from './App.tsx'
 import './index.css'
 import { Provider } from 'react-redux'
 import { store } from './store/index.ts'
-// import ErrorBoundary from './pages/ErrorBoundary.tsx'
+import ErrorBoundary from './pages/ErrorBoundary.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    {/* <ErrorBoundary> */}
+    <ErrorBoundary>
       <Provider store={store}>
         <App />
       </Provider>
-    {/* </ErrorBoundary> */}
+    </ErrorBoundary>
   </React.StrictMode>
 )
