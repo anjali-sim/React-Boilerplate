@@ -1,12 +1,12 @@
-/* eslint-disable import/no-cycle */
 import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import counterSlice from './counterSlice'
-
+import authSlice from './authSlice'
 
 export const store = configureStore({
   reducer: {
-    counter: counterSlice
+    counter: counterSlice,
+    auth: authSlice
   }
 })
 

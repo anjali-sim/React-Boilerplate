@@ -1,18 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import ProtectedRoute from './routes/ProtectedRoute'
+import Layout from './pages/Layout'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
 
 function App() {
-  const router = createBrowserRouter([
+  // const router = createBrowserRouter([
+    // {
+    //   path: '/login',
+    //   element: <Login />
+    // },
+    // {
+    //   path: '/Signup',
+    //   element: <Signup />
+    // },
+    // {
+    //   path: '/',
+    //   element: (
+    //     <ProtectedRoute>
+    //       <Layout />
+    //     </ProtectedRoute>
+    //   ),
+    //   children: [
+    //     {
+    //       path: '/User',
+    //       element: <UserPage />
+    //     },
+    //     {
+    //       path: '/chat',
+    //       element: <ChatPage />
+    //     },
+    //     {
+    //       path: '/profile',
+    //       element: <Profile />
+    //     },
+    //     {
+    //       path: '*',
+    //       element: <NotFound />
+    //     }
+    //   ]
+    // }
+  // ])
+
+  const routes: RouteObject[] = [
     {
       path: '/login',
-      element: <Login />
+      element: <Login />,
     },
     {
-      path: '/Signup',
-      element: <SignUp />
+      path: '/signup',
+      element: <Signup />,
     },
     {
       path: '/',
@@ -23,27 +63,24 @@ function App() {
       ),
       children: [
         {
-          path: '/User',
-          element: <UserPage />
-        },
-        {
-          path: '/chat',
-          element: <ChatPage />
-        },
-        {
-          path: '/profile',
-          element: <Profile />
+          path: '/home',
+          element: <Home />,
         },
         {
           path: '*',
-          element: <NotFound />
-        }
-      ]
-    }
-  ])
+          element: <NotFound />,
+        },
+      ],
+    },
+  ];
+  
+  const router = createBrowserRouter(routes);
 
   return (
+    <>
     <RouterProvider router={router} />
+    <Login />
+    </>
   )
 }
 
