@@ -8,43 +8,6 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 
 function App() {
-  // const router = createBrowserRouter([
-    // {
-    //   path: '/login',
-    //   element: <Login />
-    // },
-    // {
-    //   path: '/Signup',
-    //   element: <Signup />
-    // },
-    // {
-    //   path: '/',
-    //   element: (
-    //     <ProtectedRoute>
-    //       <Layout />
-    //     </ProtectedRoute>
-    //   ),
-    //   children: [
-    //     {
-    //       path: '/User',
-    //       element: <UserPage />
-    //     },
-    //     {
-    //       path: '/chat',
-    //       element: <ChatPage />
-    //     },
-    //     {
-    //       path: '/profile',
-    //       element: <Profile />
-    //     },
-    //     {
-    //       path: '*',
-    //       element: <NotFound />
-    //     }
-    //   ]
-    // }
-  // ])
-
   const routes: RouteObject[] = [
     {
       path: '/login',

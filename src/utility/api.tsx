@@ -2,28 +2,6 @@ import axios from 'axios'
 import { API_PATHS } from '../constants/apiPaths'
 import { getCookie } from '@/lib/getCookie'
 
-/*
-Best practice to store access-token and refresh-token is
-cookie not a local storage. 
-
-Here I've created request interceptors to intercept
-request and add token into request header from cookie.
-You can update this logic as well create response interceptors based on project requiriments.
-
-I've added custom config called withoutAuth in axios instance
-withoutAuth config value will decide whether send a token in request or not.
-if API need token in header in that case yu don't have to pass withoutAuth config
-and it will work as expected.
-EX: 
-axiosInstance.get('/users')
-axiosInstance.post('/posts', { title: 'foo', body: 'bar', userId: 1 })
-
-When you don't need token in header at that time you've to pass withoutAuth true.
-EX: 
-axiosInstance.get('/users', { withoutAuth: true})
-axiosInstance.post('/posts', { title: 'foo', body: 'bar', userId: 1 }, { withoutAuth: true })
-*/
-
 declare module 'axios' {
   export interface AxiosRequestConfig {
     withoutAuth?: boolean
